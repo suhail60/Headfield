@@ -1,0 +1,720 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Agrandir;
+}
+@font-face {
+    font-family: 'Agrandir';
+    src: url('fonts/Agrandir/Agrandir-Regular.otf') format('opentype'),
+         url('fonts/Agrandir/Agrandir-Tight.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+:root {
+    --primary-color: #ff6600;
+    --secondary-color: #333;
+    --font-size: 16px;
+
+}
+html,body{
+    overflow-x: hidden;
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    height: 60px;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(12px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 99;
+    width: 100vw;
+}
+
+ul {
+    display: flex;
+    gap: 12px;
+    list-style: none;
+    align-items: center;
+}
+
+ul li {
+    position: relative;
+}
+
+/* Navigation Links */
+ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    position: relative;
+    padding-bottom: 5px; /* Adds spacing for the underline */
+}
+
+/* Underline Animation */
+ul li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #ff8a00, #e52e71); /* Gradient underline */
+    transition: width 0.3s ease-in-out;
+}
+
+/* Hover Effect - Expanding Underline */
+ul li a:hover::after {
+    width: 100%;
+}
+
+/* Menu Icon */
+.menu {
+    width: 22px;
+    display: none;
+}
+
+/* Button Styling */
+.btn {
+    padding: 8px 18px;
+    outline: solid #FFA800 1px;
+    border-radius: 25px;
+    background-color: transparent;
+    border: none;
+    color: #FFA800;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Button Hover Effect */
+.btn:hover ,  .btn-3:hover {
+    background: #FFA800;
+    color: black;
+}
+.btn-2:hover {
+    background: transparent;
+    color: white;
+    border: 1px solid #FFA800; /* Use border instead of outline */
+    transition: all 0.3s ease-in-out; /* Smooth hover effect */
+}
+
+/* Menu Toggle */
+.menu-toggle {
+    display: none;
+}
+
+.banner{
+    /* margin-top: -60px; */
+background-color: #110F0F;
+width: 100%;
+height: 100vh;
+color: white;
+display: flex;
+align-items: center;
+justify-content: center;
+flex-direction: column;
+background-image: url(/images/vector.png);
+gap: 45px;
+position: relative;
+
+}
+.banner-content{
+    text-align: center;
+}
+.rainbow-glow {
+    font-size: 36px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    animation: rainbowGlow 2s infinite alternate;
+}
+
+/* Rainbow Glow Animation */
+@keyframes rainbowGlow {
+    0% { text-shadow: 0 0 5px red, 0 0 10px orange; }
+    25% { text-shadow: 0 0 5px orange, 0 0 10px yellow; }
+    50% { text-shadow: 0 0 5px yellow, 0 0 10px green; }
+    75% { text-shadow: 0 0 5px green, 0 0 10px blue; }
+    100% { text-shadow: 0 0 5px blue, 0 0 10px purple; }
+}
+
+h1{
+    font-family: Agrandir ;
+    font-size: 55px;
+}
+.highlighted{
+    background: linear-gradient(to right, orange, green);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+.search{
+    padding: 12px 18px;
+    outline: solid white 1px;
+    border-radius: 25px;
+    background: transparent;
+    border: none;
+    
+}
+.btn-2{
+    background: #FFA800;
+    padding: 12px 18px;
+    border-radius: 25px;
+    outline: none;
+    border: none;
+    color: white;
+    margin-left: 23px;
+}
+.blob1{
+    width: 38%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+.blob2{
+    width: 39%;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.content{
+    height: 544px;
+    background: #000000;
+    color: white;
+}
+.content .container{
+    display: flex;
+    justify-content: space-between;
+    padding: 120px 60px;
+}
+.container .left,.right{
+    width: 50%;
+    display: flex;
+}
+.left h1{
+font-size: 20px;
+}
+.right p{
+    padding: 0 80px;
+    }
+/* .associate-company{
+    width: 100%;
+    overflow: hidden;
+  
+} */
+/* .slides1,.slides2{
+    display: flex;
+    justify-content:space-between ;
+    margin-bottom: 12px;
+    
+} */
+/* .slides1{
+    margin-left: -40px;
+}
+.slides2{
+    margin-right: -40px;
+} */
+ /* Parent Container */
+/* Parent Container */
+/* Parent Container */
+.slider-wrapper {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    margin-bottom: 25px;
+}
+
+.slides {
+    display: flex;
+    gap: 20px;
+    min-width: max-content; /* Prevents shrinking */
+    white-space: nowrap; /* Ensures inline scrolling */
+    align-items: center;
+    transition: transform 0.05s linear;
+}
+
+.slides img {
+    width: 150px; /* Adjust as needed */
+    height: auto;
+    object-fit: contain;
+}
+
+
+
+
+.offer{
+    width: 100%;
+    min-height: 803px;
+    background: #110F0F;
+    color: white;
+    
+    padding: 70px 20px;
+}
+.offer .text h1{
+  font-size: clamp(1.5vw, 2.2vw, 1.2vw);
+    
+    
+    text-align: center;
+    margin-bottom: 12px;
+    
+}
+.offer .text p{
+    margin: auto;
+    text-align: center;
+   padding: 0 120px;
+}
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px; 
+    justify-content: center; 
+    padding: 120px;
+    margin-top: 15px;
+}
+
+.card {
+    width: 100%; 
+    height: 250px;
+   outline: solid gray 1px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    gap: 20px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 12px;
+ 
+}
+
+.card .card-content h1{
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+.card .card-content p{
+font-size: 12px;
+color: #FFFFFF99;
+}
+
+.choose-us{
+    width: 100%;
+    min-height: 596px;
+    background: #000000;
+    display: flex;
+    color: white;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+}
+.img,.txt{
+    width: 50vw;
+}
+.img img{
+    width: 47vw;
+}
+.txt .text-inside{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    gap: 12px;
+
+   
+}
+.work{
+    width: 100%;
+    min-height: 882px;
+    background-color: #110F0F;
+    color: white;
+    display: flex;
+    gap: 22px;
+    padding: 12px 25px;
+    justify-content: center;
+    
+    
+
+}
+.work .lft-text,.middle-card,.right-card{
+    width: 33%;
+    display: flex;
+    gap: 12px;
+    flex-direction: column;
+    margin-top: 40px;
+    
+   
+    
+}
+.work .lft-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+  
+    gap: 12px;
+}
+.lft-text h1{
+    font-size:30px ;
+}
+.middle-card h1, .right-card h1{
+font-size: 23px;
+}
+.middle-card h3, .right-card h3{
+font-size: 16px;
+}
+.work-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    gap: 25px;
+    position: relative;
+    transition: all 0.3s ease-in-out;
+    border-radius: 10px;
+    border: 1px solid gray;
+    /* background-color: red; */
+    padding: 12px;
+    /* z-index: 1; */
+    cursor: pointer;
+    
+    
+}
+.work-card::after, .work-card::before{
+    content: '';
+    position: absolute;
+    height: calc(100% + 13px); /* Slightly larger to appear outside */
+    width: calc(100% + 13px);
+    /* background-image: conic-gradient(from var(--angle), #ff4545, #00ff99, #006aff, #ff0095, #ff4545); */
+    background: red;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: -1;
+    padding: 3px;
+    border-radius: 10px;
+    /* background-clip: content-box; Ensures border effect is visible */
+    animation: 3s spin linear infinite;
+    
+  }
+
+/* Default State: Hidden Glow */
+.work-card::before {
+    filter: blur(1.5rem);
+    opacity: 0; /* Hide initially */
+    z-index: -2; /* Push further back */
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Glow Effect on Hover */
+.work-card:hover::before {
+    opacity: 0.5; /* Show glow only on hover */
+}
+  /* @property --angle{
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+  }
+  @keyframes spin{
+    from{
+      --angle: 0deg;
+    }
+    to{
+      --angle: 360deg;
+    }
+  } */
+work-card-content{}
+.work-card .img{
+ width: 100%;
+ height: 120px;
+ background-color: blue;
+ border-radius: 10px;
+ 
+
+}
+.work-card button{
+    padding: 12px 25px;
+    background: #FFA800;
+    border-radius: 12px;
+    border: none;
+    outline: none;
+    margin: 25px 0;
+}
+.work-card button:hover {
+    background: #FFA800;
+    color: black;
+}
+.btn-3 {
+    background: #FFA800;
+    padding: 12px 18px;
+    border-radius: 25px;
+    outline: none;
+    border: none;
+    color: white;
+    
+}
+/* Testimonial Section */
+/* Testimonial Section */
+.testimonial-section {
+    text-align: center;
+    width: 100%;
+    margin: auto;
+    padding: 40px;
+    background: #000000;
+    position: relative;
+}
+
+/* Testimonial Container */
+.testimonial-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    width: 100%; /* Prevents shrinking */
+    margin: auto;
+}
+
+/* Testimonial Slider */
+.testimonial-slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out; /* Smooth sliding */
+    flex-wrap: nowrap;
+    width: max-content; /* Prevents shrinking */
+}
+
+/* Individual Testimonial */
+.testimonial {
+    flex: 0 0 18%; /* Ensures 4 cards are visible without shrinking */
+    height: 206px;
+    background-color: #0F0F0F;
+    margin: 0 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    color: white;
+    border-radius: 10px;
+    padding: 8px;
+    border: 1px solid gray;
+}
+
+/* Navigation Buttons */
+.prev, .next {
+    position: absolute;
+    background: #333;
+    color: white;
+    border: none;
+    padding: 10px 14px;
+    cursor: pointer;
+    border-radius: 50%;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+/* Adjust button positions */
+.prev { 
+    left: -50px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.next { 
+    right: -50px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.prev:hover, .next:hover {
+    background: #ff6600;
+}
+
+/* Dots Navigation */
+.dots {
+    margin-top: 20px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    margin: 0 5px;
+    background: #bbb;
+    display: inline-block;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.dot.active {
+    background: #ff6600;
+}
+.newsletter{
+    width: 100%;
+    background-color: #FFB219;
+    height: 350px;
+}
+.footer {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 columns for large screens */
+    padding: 80px 40px;
+    background-color: #000000;
+    color: white;
+    gap: 20px; /* Adds space between columns */
+}
+
+/* Ensures proper spacing inside each section */
+.footer div {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+
+
+@media (max-width: 768px) {
+    .cards {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on tablets */
+        padding: 20px 30px;
+    }
+    .offer .text p{
+        padding: 0;
+    }
+    .work{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    nav ul{
+        display: none;
+    }
+    .menu{
+        display: block;
+    }
+    .work .lft-text,.middle-card,.right-card{
+        width: 100%;
+       
+        
+    }
+    .footer {
+        grid-template-columns: 1fr; /* Stack items in a single column */
+        text-align: center; /* Center align for better look */
+        padding: 40px 20px; /* Reduce padding */
+    }
+
+    .searchbar {
+        width: 100%; /* Makes input full-width on mobile */
+        max-width: 300px; /* Ensures input isn't too wide */
+        margin: auto; /* Centers input */
+    }
+}
+
+@media (max-width: 480px) {
+    .cards {
+        grid-template-columns: repeat(1, 1fr); /* 1 column on mobile */
+        padding: 0;
+    }
+    .footer {
+        grid-template-columns: 1fr; /* Stack all items in a single column */
+        text-align: center; /* Center-align content for better mobile look */
+        padding: 40px 20px; /* Reduce padding for smaller screens */
+        gap: 30px; /* Adds more spacing between sections */
+    }
+
+    .footer div {
+        align-items: center; /* Center-align items in each section */
+    }
+
+    .searchbar {
+        width: 100%; /* Full width for better responsiveness */
+        max-width: 300px; /* Prevents input from being too wide */
+        margin-top: 10px; /* Adds spacing above input */
+        padding: 12px 18px;
+        border-radius: 25px;
+        outline: none;
+        border: none;
+    }
+    nav ul{
+        display: none;
+    }
+    .menu{
+        display: block;
+    }
+    .content .container{
+        text-align: center;
+        flex-direction: column;
+        padding: 0;
+        width: 100%;
+    }
+    .content .container .left{
+        margin-top: 25px;
+        width: 100%;
+       
+        padding: 0;
+    }
+    .content .container .right {
+        width: 100%;
+    }
+    .content .container .right p{
+        margin: 25px 0;
+        padding: 0;
+    }
+    .offer .text p{
+        padding: 0;
+    }
+    .choose-us{
+        flex-direction: column-reverse;
+    }
+    .work-card img {
+        width: 300px;}
+        .banner-content p{
+            padding: 1px 25px;
+        }
+        .text-inside h1{
+            font-size: 32px;
+            font-weight: bold;
+            color: white;
+            font-family: "Poppins", sans-serif;
+            border-right: 3px solid white; /* Cursor effect */
+            display: inline-block;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+        .text-inside{
+            margin-top: 25px;
+        }
+        .text-inside p{
+            font-weight: bold;
+            color: white;
+            font-family: "Poppins", sans-serif;
+            border-right: 3px solid white; /* Cursor effect */
+            display: inline-block;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+        .work .lft-text,.middle-card,.right-card{
+            width: 100%;
+           
+            
+        }
+        .work{
+            justify-content: center;
+            align-items: center;
+        }
+        .img, .txt { width: 100%;}
+        #typewriter-p {
+            white-space: normal;  /* Allows multi-line wrapping */
+            word-wrap: break-word; /* Ensures words break properly */
+            max-width: 100%; /* Prevents text overflow */
+        }
+        .img img {
+            width: 95vw;
+            height: 87vw;
+        }
+        .btn-4{
+            margin-top: 18px;
+        }
+}
